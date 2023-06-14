@@ -82,7 +82,39 @@ class Paper {
 }
 
 const papers = Array.from(document.querySelectorAll('.paper'));
-
+const play1 = document.getElementById('play1')
+const video1 = document.getElementById('video1')
+const play2 = document.getElementById('play2')
+const video2 = document.getElementById('video2')
+const aplay1 = document.getElementById('aplay1')
+const audio1 = document.getElementById('audio1')
+const audio2 = document.getElementById('audio2')
+const audio3 = document.getElementById('audio3')
+const audio4 = document.getElementById('audio4')
+aplay1.addEventListener('touchend', e => {
+  audio1.play()
+})
+play1.addEventListener('touchend', e => {
+  audio1.pause()
+})
+play1.addEventListener('touchend', e => {
+  video1.play()
+})
+const vpause1 = document.getElementById('vpause1')
+vpause1.addEventListener('touchend', e => {
+  video1.pause()
+  audio2.play()
+})
+const apause2 = document.getElementById('apause2')
+apause2.addEventListener('touchend', e => {
+  audio2.pause()
+  audio3.play()
+})
+play2.addEventListener('touchend', e => {
+  audio3.pause()
+  video2.play()
+  audio4.play()
+})
 papers.forEach(paper => {
   const p = new Paper();
   p.init(paper);
