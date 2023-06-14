@@ -103,6 +103,7 @@ const papers = Array.from(document.querySelectorAll('.paper'));
 const play1 = document.getElementById('play1')
 const video1 = document.getElementById('video1')
 const play2 = document.getElementById('play2')
+const vpause3 = document.getElementById('vpause3')
 const video2 = document.getElementById('video2')
 const aplay1 = document.getElementById('aplay1')
 const audio1 = document.getElementById('audio1')
@@ -132,6 +133,10 @@ play2.addEventListener('touchend', e => {
   audio3.pause()
   video2.play()
   audio4.play()
+})
+vpause3.addEventListener('touchend', e => {
+  audio4.pause()
+  video2.pause()
 })
 papers.forEach(paper => {
   const p = new Paper();
