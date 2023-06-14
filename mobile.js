@@ -1,4 +1,22 @@
 let highestZ = 1;
+var x = document.getElementsByTagName("BODY")[0];
+x.style.opacity = 0
+window.addEventListener("load", event => {
+  var images = Array.from(document.querySelectorAll('img'))
+  var imagesLength = images.length
+  var i = 0
+  images.forEach((image) => {
+    var isLoaded = image.complete && image.naturalHeight !== 0;
+    if(isLoaded) {
+      i++
+    }
+  })
+  if(i === imagesLength) {
+    setTimeout(() => {
+      x.style.opacity = 1
+    }, 1000)
+  }
+});
 
 class Paper {
   holdingPaper = false;
